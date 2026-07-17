@@ -81,6 +81,24 @@
     0%,100%{transform:translateY(-50%) rotate(0deg);}
     50%{transform:translateY(-52%) rotate(1.2deg);}
   }
+  .hero-photo{
+    position:absolute;right:0;top:0;bottom:0;width:48%;
+    overflow:hidden;
+  }
+  .hero-photo::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg, var(--charcoal) 0%, rgba(27,23,18,0.35) 30%, rgba(27,23,18,0.05) 60%);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(0.9) contrast(1.02);}
+  .cat-photo{
+    position:relative;aspect-ratio:4/3;overflow:hidden;margin-bottom:6px;
+  }
+  .cat-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+  .cat-card:hover .cat-photo img{transform:scale(1.06);}
+  .cat-photo .tag{
+    position:absolute;bottom:8px;left:8px;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
+    background:rgba(27,23,18,0.72);color:var(--ivory);padding:4px 9px;
+  }
   .hero-inner{position:relative;z-index:2;max-width:620px;}
   .eyebrow{
     display:flex;align-items:center;gap:12px;
@@ -199,6 +217,7 @@
   @media(max-width:900px){
     .nav-links{display:none;}
     .hero-branch{width:380px;opacity:0.35;}
+    .hero-photo{opacity:0.25;}
     .cat-grid{grid-template-columns:1fr 1fr;}
     .about-grid,.visit-grid{grid-template-columns:1fr;}
     .visit-info{padding:36px;}
@@ -249,6 +268,10 @@
     <ellipse cx="320" cy="502" rx="18" ry="8" fill="#7f8f6d" opacity="0.4" transform="rotate(35 320 502)"/>
   </svg>
 
+  <div class="hero-photo" aria-hidden="true">
+    <img src="https://picsum.photos/seed/yasmeen-hero/900/1200" alt="">
+  </div>
+
   <div class="wrap hero-inner">
     <span class="eyebrow">Khorfakkan · Sharjah · Since 2018</span>
     <h1>Fresh blooms, gathered with <em>care</em>, delivered with grace.</h1>
@@ -273,28 +296,28 @@
   <div class="cat-grid">
     <div class="cat-card">
       <span class="cat-num">01</span>
-      <svg class="cat-icon" viewBox="0 0 48 48" fill="none"><path d="M24 6c4 4 4 10 0 14-4-4-4-10 0-14z" fill="currentColor" opacity=".9"/><path d="M24 20c-6 0-11 4-11 4s5 4 11 4 11-4 11-4-5-4-11-4z" fill="currentColor" opacity=".7"/><path d="M24 24v18" stroke="currentColor" stroke-width="1.5"/></svg>
+      <div class="cat-photo"><img src="https://picsum.photos/seed/yasmeen-fresh/400/300" alt="Fresh flowers placeholder"><span class="tag">Photo: Fresh Flowers</span></div>
       <h3>Fresh Flowers</h3>
       <p>Daily arrangements and loose stems — roses, jasmine and seasonal blooms, cut and arranged to order.</p>
       <a class="cat-link" href="https://wa.me/971589335007?text=Hi%2C%20I%27d%20like%20to%20order%20fresh%20flowers" target="_blank" rel="noopener">Order fresh →</a>
     </div>
     <div class="cat-card">
       <span class="cat-num">02</span>
-      <svg class="cat-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="7" fill="currentColor" opacity=".85"/><circle cx="14" cy="26" r="6" fill="currentColor" opacity=".6"/><circle cx="34" cy="26" r="6" fill="currentColor" opacity=".6"/><path d="M24 23v19" stroke="currentColor" stroke-width="1.5"/></svg>
+      <div class="cat-photo"><img src="https://picsum.photos/seed/yasmeen-artificial/400/300" alt="Artificial flowers placeholder"><span class="tag">Photo: Artificial Flowers</span></div>
       <h3>Artificial Flowers</h3>
       <p>Lasting silk and premium artificial arrangements for homes, offices and storefronts that stay beautiful year-round.</p>
       <a class="cat-link" href="https://wa.me/971589335007?text=Hi%2C%20I%27d%20like%20to%20order%20artificial%20flowers" target="_blank" rel="noopener">Order artificial →</a>
     </div>
     <div class="cat-card">
       <span class="cat-num">03</span>
-      <svg class="cat-icon" viewBox="0 0 48 48" fill="none"><path d="M24 8v28" stroke="currentColor" stroke-width="1.5"/><path d="M24 14c-8-4-12 2-12 2s4 6 12 4" fill="currentColor" opacity=".6"/><path d="M24 22c8-4 12 2 12 2s-4 6-12 4" fill="currentColor" opacity=".6"/><path d="M24 30c-6-2-9 2-9 2s3 5 9 3" fill="currentColor" opacity=".45"/></svg>
+      <div class="cat-photo"><img src="https://picsum.photos/seed/yasmeen-dry/400/300" alt="Dry flowers placeholder"><span class="tag">Photo: Dry Flowers</span></div>
       <h3>Dry Flowers</h3>
       <p>Preserved botanicals and dried bouquets — a natural, long-lasting alternative for décor and keepsakes.</p>
       <a class="cat-link" href="https://wa.me/971589335007?text=Hi%2C%20I%27d%20like%20to%20order%20dry%20flowers" target="_blank" rel="noopener">Order dried →</a>
     </div>
     <div class="cat-card">
       <span class="cat-num">04</span>
-      <svg class="cat-icon" viewBox="0 0 48 48" fill="none"><rect x="10" y="18" width="28" height="20" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 24h28" stroke="currentColor" stroke-width="1.5"/><path d="M24 18v20" stroke="currentColor" stroke-width="1.5"/><path d="M24 18c-3-6-11-6-11 0 8 0 11 0 11 0zM24 18c3-6 11-6 11 0-8 0-11 0-11 0z" fill="currentColor" opacity=".7"/></svg>
+      <div class="cat-photo"><img src="https://picsum.photos/seed/yasmeen-gifts/400/300" alt="Gift items placeholder"><span class="tag">Photo: Gift Items</span></div>
       <h3>Gift Items</h3>
       <p>Gift wrapping and curated add-ons — chocolates, balloons and keepsakes paired with your bouquet.</p>
       <a class="cat-link" href="https://wa.me/971589335007?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20gift%20items" target="_blank" rel="noopener">Ask about gifts →</a>
@@ -315,20 +338,9 @@
         <div class="stat"><h4>100%</h4><span>Hand-arranged</span></div>
       </div>
     </div>
-    <div class="about-figure">
-      <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="400" height="460" fill="#242019"/>
-        <g opacity="0.9">
-          <path d="M200 420 C190 300 210 220 200 60" stroke="#c9a227" stroke-width="2" fill="none"/>
-          <g transform="translate(200,80)"><circle r="16" fill="#fffdf8"/><circle r="16" cx="26" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="-24" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="2" cy="-26" fill="#fffdf8" opacity="0.95"/><circle r="8" fill="#c9a227"/></g>
-          <g transform="translate(150,180) scale(0.85)"><circle r="16" fill="#fffdf8"/><circle r="16" cx="26" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="-24" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="2" cy="-26" fill="#fffdf8" opacity="0.95"/><circle r="8" fill="#c9a227"/></g>
-          <g transform="translate(250,260) scale(0.7)"><circle r="16" fill="#fffdf8"/><circle r="16" cx="26" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="-24" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="2" cy="-26" fill="#fffdf8" opacity="0.95"/><circle r="8" fill="#c9a227"/></g>
-          <g transform="translate(180,340) scale(0.6)"><circle r="16" fill="#fffdf8"/><circle r="16" cx="26" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="-24" cy="10" fill="#fffdf8" opacity="0.9"/><circle r="16" cx="2" cy="-26" fill="#fffdf8" opacity="0.95"/><circle r="8" fill="#c9a227"/></g>
-          <path d="M200 120 Q260 150 280 200" stroke="#7f8f6d" stroke-width="2.5" fill="none" opacity="0.6"/>
-          <path d="M200 220 Q140 250 120 300" stroke="#7f8f6d" stroke-width="2.5" fill="none" opacity="0.6"/>
-          <path d="M200 300 Q250 330 260 380" stroke="#7f8f6d" stroke-width="2.5" fill="none" opacity="0.5"/>
-        </g>
-      </svg>
+    <div class="about-figure" style="aspect-ratio:400/460;overflow:hidden;position:relative;">
+      <img src="https://picsum.photos/seed/yasmeen-about/400/460" alt="Shop placeholder photo" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85) contrast(1.03);">
+      <span style="position:absolute;bottom:12px;left:12px;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;background:rgba(27,23,18,0.72);color:var(--ivory);padding:4px 9px;">Photo: Shop / Arrangement</span>
     </div>
   </div>
 </section>
