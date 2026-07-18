@@ -3,10 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Al Yasmeen Al Abyad Flowers — Khorfakkan, Sharjah</title>
+<title>Al Yasmeen Al Abyad Flowers — Fresh &amp; Artificial Flower Shop in Khorfakkan, Sharjah</title>
+<meta name="description" content="Al Yasmeen Al Abyad Flowers in Khorfakkan, Sharjah since 2018. Fresh bouquets, artificial and dry flower arrangements, and gift hampers — order on WhatsApp for same-day pickup or delivery.">
+<meta name="keywords" content="flower shop Khorfakkan, flowers Sharjah, fresh flowers Khorfakkan, artificial flowers UAE, gift flowers Khorfakkan, Al Yasmeen Al Abyad">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b1712">
+<link rel="canonical" href="https://alyasmeenalabyadflowers.ae/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Al Yasmeen Al Abyad Flowers — Khorfakkan, Sharjah">
+<meta property="og:description" content="Fresh bouquets, artificial and dry flower arrangements, and gift hampers in Khorfakkan since 2018. Order on WhatsApp for pickup or delivery.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1572454591674-2739f30d8c40?auto=format&fit=crop&w=1200&q=70">
+<meta property="og:url" content="https://alyasmeenalabyadflowers.ae/">
+<meta property="og:locale" content="en_AE">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Al Yasmeen Al Abyad Flowers — Khorfakkan, Sharjah">
+<meta name="twitter:description" content="Fresh bouquets, artificial and dry flower arrangements, and gift hampers in Khorfakkan since 2018.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1572454591674-2739f30d8c40?auto=format&fit=crop&w=1200&q=70">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C12 2 9 5 9 8C9 10.2 10.3 12 12 12C13.7 12 15 10.2 15 8C15 5 12 2 12 2Z' fill='%23c9a227'/%3E%3Cpath d='M12 12C12 12 9 15 9 18C9 20.2 10.3 22 12 22C13.7 22 15 20.2 15 18C15 15 12 12 12 12Z' fill='%231b1712'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Structured data: LocalBusiness / Florist -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Florist",
+  "name": "Al Yasmeen Al Abyad Flowers",
+  "alternateName": "الياسمين الابيض لتجارة الزهور",
+  "image": "https://images.unsplash.com/photo-1572454591674-2739f30d8c40?auto=format&fit=crop&w=1200&q=70",
+  "telephone": "+971589335007",
+  "email": "yasmeenflowers2018@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Al Lulouyya, behind Omar bin Al Khattab St., Shop 4/5",
+    "addressLocality": "Khorfakkan",
+    "addressRegion": "Sharjah",
+    "addressCountry": "AE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.39701,
+    "longitude": 56.3493533
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "16:00",
+      "closes": "22:00"
+    }
+  ],
+  "sameAs": ["https://instagram.com/Flowers_yasmeen"],
+  "founder": "2018"
+}
+</script>
 <style>
   :root{
     --charcoal:#1b1712;
@@ -62,7 +126,31 @@
     border-radius:2px;transition:all .25s;white-space:nowrap;
   }
   .nav-cta:hover{background:var(--gold);color:var(--charcoal);}
-  .burger{display:none;background:none;border:0;color:var(--ivory);font-size:1.4rem;cursor:pointer;}
+  .burger{
+    display:none;background:none;border:0;color:var(--ivory);cursor:pointer;
+    width:38px;height:38px;padding:0;flex-shrink:0;position:relative;
+  }
+  .burger span, .burger span::before, .burger span::after{
+    content:'';position:absolute;left:8px;right:8px;height:2px;background:var(--ivory);
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .burger span{top:18px;}
+  .burger span::before{content:'';top:-8px;position:absolute;left:0;right:0;height:2px;background:var(--ivory);}
+  .burger span::after{content:'';top:8px;position:absolute;left:0;right:0;height:2px;background:var(--ivory);}
+  .burger[aria-expanded="true"] span{background:transparent;}
+  .burger[aria-expanded="true"] span::before{transform:translateY(8px) rotate(45deg);}
+  .burger[aria-expanded="true"] span::after{transform:translateY(-8px) rotate(-45deg);}
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;
+    background:var(--charcoal-soft);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  .mobile-menu.open{max-height:320px;}
+  .mobile-menu a{
+    padding:16px 32px;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu a:first-child{border-top:none;}
 
   /* -------- hero -------- */
   .hero{
@@ -216,6 +304,8 @@
 
   @media(max-width:900px){
     .nav-links{display:none;}
+    .burger{display:block;}
+    .mobile-menu{display:flex;}
     .hero-branch{width:380px;opacity:0.35;}
     .hero-photo{opacity:0.25;}
     .cat-grid{grid-template-columns:1fr 1fr;}
@@ -227,6 +317,7 @@
     .cat-grid{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     nav{padding:14px 20px;}
+    .hero-scroll{display:none;}
   }
   @media (prefers-reduced-motion:reduce){
     .hero-branch{animation:none;}
@@ -240,7 +331,7 @@
   <nav>
     <div class="logo-block">
       <span class="logo-en">Al Yasmeen Al Abyad</span>
-      <span class="logo-ar arabic">الياسمين الابيض لتجارة الزهور</span>
+      <span class="logo-ar arabic" lang="ar">الياسمين الابيض لتجارة الزهور</span>
     </div>
     <div class="nav-links">
       <a href="#catalog">Products</a>
@@ -248,8 +339,36 @@
       <a href="#visit">Visit</a>
     </div>
     <a class="nav-cta" href="https://wa.me/971589335007" target="_blank" rel="noopener">Order on WhatsApp</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#catalog">Products</a>
+    <a href="#about">About</a>
+    <a href="#visit">Visit</a>
+    <a href="https://wa.me/971589335007" target="_blank" rel="noopener">Order on WhatsApp</a>
+  </div>
 </header>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  })();
+</script>
 
 <section class="hero">
   <svg class="hero-branch" viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -268,8 +387,8 @@
     <ellipse cx="320" cy="502" rx="18" ry="8" fill="#7f8f6d" opacity="0.4" transform="rotate(35 320 502)"/>
   </svg>
 
-  <div class="hero-photo" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1572454591674-2739f30d8c40?auto=format&fit=crop&w=1200&q=70" alt="">
+  <div class="hero-photo">
+    <img src="https://images.unsplash.com/photo-1572454591674-2739f30d8c40?auto=format&fit=crop&w=1200&q=70" width="1200" height="1500" alt="Fresh flower bouquet arrangement" fetchpriority="high">
   </div>
 
   <div class="wrap hero-inner">
@@ -297,7 +416,7 @@
     <div class="cat-card">
       <span class="cat-num">01</span>
       <div class="cat-photo">
-        <img src="https://images.unsplash.com/photo-1583228858294-6745cb25969e?auto=format&fit=crop&w=600&q=65" alt="Fresh flower bouquet (stock placeholder)">
+        <img src="https://images.unsplash.com/photo-1583228858294-6745cb25969e?auto=format&fit=crop&w=600&q=65" width="600" height="450" loading="lazy" alt="Fresh flower bouquet arrangement (placeholder photo)">
         <span class="tag">Photo: Fresh Flowers</span>
       </div>
       <h3>Fresh Flowers</h3>
@@ -307,7 +426,7 @@
     <div class="cat-card">
       <span class="cat-num">02</span>
       <div class="cat-photo">
-        <img src="https://images.unsplash.com/photo-1670924520385-7d07880cf49c?auto=format&fit=crop&w=600&q=65" alt="Artificial silk flowers in vase (stock placeholder)">
+        <img src="https://images.unsplash.com/photo-1670924520385-7d07880cf49c?auto=format&fit=crop&w=600&q=65" width="600" height="450" loading="lazy" alt="Artificial silk flowers in a vase (placeholder photo)">
         <span class="tag">Photo: Artificial Flowers</span>
       </div>
       <h3>Artificial Flowers</h3>
@@ -317,7 +436,7 @@
     <div class="cat-card">
       <span class="cat-num">03</span>
       <div class="cat-photo">
-        <img src="https://images.unsplash.com/photo-1567515175297-ae6359e5b187?auto=format&fit=crop&w=600&q=65" alt="Dried flowers arrangement (stock placeholder)">
+        <img src="https://images.unsplash.com/photo-1567515175297-ae6359e5b187?auto=format&fit=crop&w=600&q=65" width="600" height="450" loading="lazy" alt="Dried flower arrangement (placeholder photo)">
         <span class="tag">Photo: Dry Flowers</span>
       </div>
       <h3>Dry Flowers</h3>
@@ -327,7 +446,7 @@
     <div class="cat-card">
       <span class="cat-num">04</span>
       <div class="cat-photo">
-        <img src="https://images.unsplash.com/photo-1521478706270-f2e33c203d95?auto=format&fit=crop&w=600&q=65" alt="Floral gift boxes (stock placeholder)">
+        <img src="https://images.unsplash.com/photo-1521478706270-f2e33c203d95?auto=format&fit=crop&w=600&q=65" width="600" height="450" loading="lazy" alt="Floral gift boxes (placeholder photo)">
         <span class="tag">Photo: Gift Items</span>
       </div>
       <h3>Gift Items</h3>
@@ -351,7 +470,7 @@
       </div>
     </div>
     <div class="about-figure" style="aspect-ratio:400/460;overflow:hidden;position:relative;">
-      <img src="https://images.unsplash.com/photo-1531120364508-a6b656c3e78d?auto=format&fit=crop&w=800&q=70" alt="Assorted flowers, stock placeholder photo" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.9) contrast(1.02);">
+      <img src="https://images.unsplash.com/photo-1531120364508-a6b656c3e78d?auto=format&fit=crop&w=800&q=70" width="800" height="920" loading="lazy" alt="Assorted flowers in the shop (placeholder photo)" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.9) contrast(1.02);">
       <span style="position:absolute;bottom:12px;left:12px;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;background:rgba(27,23,18,0.72);color:var(--ivory);padding:4px 9px;">Photo: Shop / Arrangement</span>
     </div>
   </div>
