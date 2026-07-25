@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — AYA Flowers (Al Yasmeen Al Abyad)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1b1712;
+    --charcoal-soft:#242019;
+    --gold:#c9a227;
+    --gold-bright:#e0bc4c;
+    --ivory:#f7f3e9;
+    --jasmine:#fffdf8;
+    --line:rgba(247,243,233,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--charcoal);
+    color:var(--ivory);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
+  h1,h2,.display{font-family:'Fraunces', serif;font-weight:500;color:var(--jasmine);}
+
+  header{
+    position:sticky;top:0;left:0;right:0;z-index:100;
+    background:rgba(27,23,18,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1160px;margin:0 auto;padding:16px 32px;
+  }
+  .logo-en{font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:0.04em;color:var(--jasmine);}
+  .back-link{font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);}
+  .back-link:hover{color:var(--gold-bright);}
+  .nav-cta{
+    border:1px solid var(--gold);color:var(--gold-bright);
+    padding:9px 20px;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;
+    border-radius:2px;transition:all .25s;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--gold);color:var(--charcoal);}
+
+  .gallery-hero{padding:64px 0 32px;text-align:center;}
+  .kicker{font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px;}
+  .gallery-hero h1{font-size:clamp(2rem,4vw,3rem);}
+  .gallery-hero p{color:rgba(247,243,233,0.65);max-width:520px;margin:14px auto 0;}
+
+  .tabs{
+    display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
+    padding:24px 0 40px;
+  }
+  .tab{
+    padding:10px 22px;border:1px solid var(--line);border-radius:30px;
+    font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;
+    color:rgba(247,243,233,0.7);cursor:pointer;transition:all .25s;background:none;
+  }
+  .tab:hover{border-color:var(--gold);color:var(--gold-bright);}
+  .tab.active{background:var(--gold);border-color:var(--gold);color:var(--charcoal);font-weight:500;}
+
+  .grid{
+    max-width:1160px;margin:0 auto;padding:0 32px 100px;
+    column-count:4;column-gap:14px;
+  }
+  .grid-item{
+    position:relative;overflow:hidden;cursor:pointer;
+    border:1px solid var(--line);background:var(--charcoal-soft);
+    break-inside:avoid;margin-bottom:14px;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  .grid-item:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(0,0,0,0.4);}
+  .grid-item img{
+    width:100%;height:auto;display:block;transition:transform .4s ease;
+  }
+  .grid-item:hover img{transform:scale(1.04);}
+  .grid-item.hidden{display:none;}
+  .grid-item::after{
+    content:'+';
+    position:absolute;top:10px;right:10px;
+    width:30px;height:30px;border-radius:50%;
+    background:rgba(27,23,18,0.7);border:1px solid var(--gold);
+    color:var(--gold-bright);font-size:1.1rem;line-height:1;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transform:scale(0.8);transition:all .25s ease;
+    pointer-events:none;
+  }
+  .grid-item:hover::after{opacity:1;transform:scale(1);}
+
+  .lightbox{
+    position:fixed;inset:0;background:rgba(15,12,9,0.94);
+    display:none;align-items:center;justify-content:center;z-index:200;
+    padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:96vw;max-height:94vh;border:1px solid var(--line);}
+  .lightbox-close{
+    position:absolute;top:28px;right:32px;
+    font-size:1.8rem;color:var(--ivory);cursor:pointer;
+    width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);border-radius:50%;transition:all .25s;
+  }
+  .lightbox-close:hover{border-color:var(--gold);color:var(--gold-bright);}
+  .lightbox-nav{
+    position:absolute;top:50%;transform:translateY(-50%);
+    font-size:2rem;color:var(--ivory);cursor:pointer;
+    width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);border-radius:50%;transition:all .25s;
+    background:rgba(27,23,18,0.5);
+  }
+  .lightbox-nav:hover{border-color:var(--gold);color:var(--gold-bright);}
+  .lightbox-prev{left:24px;}
+  .lightbox-next{right:24px;}
+
+  footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;font-size:0.8rem;color:rgba(247,243,233,0.45);}
+
+  @media(max-width:900px){
+    .grid{column-count:3;}
+  }
+  @media(max-width:600px){
+    .grid{column-count:2;column-gap:8px;padding:0 16px 60px;}
+    .grid-item{margin-bottom:8px;}
+    .lightbox-nav{width:40px;height:40px;font-size:1.4rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <span class="logo-en">AYA Flowers</span>
+    <a class="back-link" href="index.html">&larr; Back to Home</a>
+    <a class="nav-cta" href="https://wa.me/971589335007" target="_blank" rel="noopener">Order on WhatsApp</a>
+  </nav>
+</header>
+
+<section class="gallery-hero">
+  <div class="wrap">
+    <span class="kicker">Our Work</span>
+    <h1>Every arrangement, one gallery</h1>
+    <p>Browse real bouquets and arrangements from Al Yasmeen Al Abyad Flowers. Click any photo for a closer look.</p>
+  </div>
+</section>
+
+<div class="grid" id="grid"></div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" id="lbClose">&times;</div>
+  <div class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</div>
+  <img id="lbImg" src="" alt="">
+  <div class="lightbox-nav lightbox-next" id="lbNext">&#8250;</div>
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Al Yasmeen Al Abyad Flowers Tr. All rights reserved.
+</footer>
+
+<script src="gallery_data.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const grid = document.getElementById('grid');
+
+function render() {
+  grid.innerHTML = '';
+  galleryData.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'grid-item';
+    const img = document.createElement('img');
+    img.src = 'images/gallery/' + item.file;
+    img.loading = 'lazy';
+    img.alt = 'AYA Flowers arrangement';
+    div.appendChild(img);
+    div.addEventListener('click', () => openLightbox(i));
+    grid.appendChild(div);
+  });
+}
+
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+let lbPos = 0;
+
+function openLightbox(index) {
+  lbPos = index;
+  showLbImage();
+  lightbox.classList.add('open');
+}
+function showLbImage() {
+  lbImg.src = 'images/gallery/' + galleryData[lbPos].file;
+}
+document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+document.getElementById('lbPrev').addEventListener('click', () => {
+  lbPos = (lbPos - 1 + galleryData.length) % galleryData.length;
+  showLbImage();
+});
+document.getElementById('lbNext').addEventListener('click', () => {
+  lbPos = (lbPos + 1) % galleryData.length;
+  showLbImage();
+});
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+  if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+  if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+});
+
+render();
+</script>
+</body>
+</html>
